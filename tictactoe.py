@@ -19,10 +19,10 @@ def initial_state():
 
 
 def player(board):
-    """
-    Returns player who has the next turn on a board.
-    """
-    raise NotImplementedError
+    # Returns player who has the next turn on a board.
+    x_count = sum(row.count('X') for row in board)
+    o_count = sum(row.count('O') for row in board)
+    return 'X' if x_count <= o_count else 'O'
 
 
 def actions(board):
